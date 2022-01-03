@@ -726,7 +726,7 @@ END
         silent systemctl enable mariadb
         silent systemctl start  mariadb
     else
-        service mysql start
+        service mariadb start
     fi    
 }
 
