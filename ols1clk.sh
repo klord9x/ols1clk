@@ -578,6 +578,7 @@ function install_wordpress_core
     echoG 'Install wordpress Cache plugin'    
     wp plugin install litespeed-cache \
         --allow-root \
+        --activate \
         --quiet
     echoG 'Install wordpress SSL plugin'    
     wp plugin install really-simple-ssl \
