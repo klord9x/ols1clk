@@ -603,7 +603,7 @@ function install_wordpress_core
         --quiet
     echoG 'Install wordpress GDRIVE Extension 2.71'    
     # https://drive.google.com/uc?id=1wq8towa09wdcX_jMztNBUGN3435GA3Zn&export=download \
-    wp plugin install https://drive.google.com/uc?id=1o3ttKUGa79eIhdoAWUFeB5Eolk-vgzao&export=download \
+    wp plugin install 'https://drive.google.com/uc?id=1o3ttKUGa79eIhdoAWUFeB5Eolk-vgzao&export=download' \
         --allow-root \
         --activate \
         --quiet
