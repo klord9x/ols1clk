@@ -588,21 +588,21 @@ function install_wordpress_core
         --admin_email=$EMAIL \
         --skip-email \
         --allow-root
-    echoG 'Install wordpress_$WPNUM Cache plugin'    
+    echoG "Install wordpress_$WPNUM Cache plugin"    
     wp plugin install litespeed-cache \
         --allow-root \
         --quiet
-    echoG 'Install wordpress_$WPNUM Sll plugin'    
+    echoG "Install wordpress_$WPNUM Sll plugin"    
     wp plugin install really-simple-ssl \
         --allow-root \
         --activate \
         --quiet
-    echoG 'Install wordpress_$WPNUM All-in-One WP Migration'    
+    echoG "Install wordpress_$WPNUM All-in-One WP Migration"    
     wp plugin install all-in-one-wp-migration \
         --allow-root \
         --activate \
         --quiet
-    echoG 'Install wordpress_$WPNUM GDRIVE Extension 2.71'    
+    echoG "Install wordpress_$WPNUM GDRIVE Extension 2.71"    
     # https://drive.google.com/uc?id=1wq8towa09wdcX_jMztNBUGN3435GA3Zn&export=download \
     wp plugin install 'https://drive.google.com/uc?id=1o3ttKUGa79eIhdoAWUFeB5Eolk-vgzao&export=download' \
         --allow-root \
