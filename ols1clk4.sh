@@ -213,7 +213,7 @@ function usage
     echoNW "  -E,    --email [EMAIL]          " "${EPACE} To set the administrator email."
     echoW " --lsphp [VERSION]                 " "To set the LSPHP version, such as 80. We currently support versions '${LSPHPVERLIST[@]}'."
     echoW " --mariadbver [VERSION]            " "To set MariaDB version, such as 10.5. We currently support versions '${MARIADBVERLIST[@]}'."
-    echoNW "  -W,    --wordpress_$WPNUM              " "${EPACE} To install WordPress. You will still need to complete the WordPress setup by browser"
+    echoNW "  -W,    --wordpress              " "${EPACE} To install WordPress. You will still need to complete the WordPress setup by browser"
     echoW " --wordpressplus [SITEDOMAIN]      " "To install, setup, and configure WordPress, also LSCache will be enabled"
     echoW " --wordpresspath [WP_PATH]         " "To specify a location for the new WordPress installation or an existing WordPress."
     echoNW "  -R,    --dbrootpassword [PASSWORD]  " "     To set the database root password instead of using a random one."
@@ -1640,7 +1640,7 @@ while [ ! -z "${1}" ] ; do
         --pure-mariadb )
                 PURE_DB=1
                 ;;        
-        -[wW] | --wordpress_$WPNUM )      
+        -[wW] | --wordpress )      
                 INSTALLWORDPRESS=1
                 ;;
         --wordpressplus )  
