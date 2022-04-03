@@ -1712,6 +1712,9 @@ while [ ! -z "${1}" ] ; do
                 shift
                 WPNUM=$FOLLOWPARAM
                 WORDPRESSPATH=$SERVER_ROOT/wordpress_$FOLLOWPARAM
+                DATABASENAME=olsdbname_$FOLLOWPARAM
+                USERNAME=olsdbuser_$FOLLOWPARAM
+                WPTITLE=MySite $FOLLOWPARAM
                 ;;
         -[Uu] | --uninstall )       
                 ACTION=UNINSTALL
