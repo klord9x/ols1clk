@@ -1120,14 +1120,14 @@ function config_vh_wp
                 echoB "${FPACE} - Create wordpress_$WPNUM listener"  
                 cat >> ${WEBCF} <<END
 
-listener wordpress_$WPNUM {
+listener wordpress {
 address                 *:$WPPORT
 secure                  0
 map                     wordpress_$WPNUM $SITEDOMAIN
 }
 
 
-listener wordpressssl_$WPNUM {
+listener wordpressssl {
 address                 *:$SSLWPPORT
 secure                  1
 map                     wordpress_$WPNUM $SITEDOMAIN
