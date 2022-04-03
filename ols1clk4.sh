@@ -1714,7 +1714,7 @@ while [ ! -z "${1}" ] ; do
                 WORDPRESSPATH=$SERVER_ROOT/wordpress_$FOLLOWPARAM
                 DATABASENAME=olsdbname_$FOLLOWPARAM
                 USERNAME=olsdbuser_$FOLLOWPARAM
-                WPTITLE="MySite $FOLLOWPARAM"
+                WPTITLE="MySite_$FOLLOWPARAM"
                 ;;
         -[Uu] | --uninstall )       
                 ACTION=UNINSTALL
