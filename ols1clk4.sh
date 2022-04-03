@@ -1711,6 +1711,7 @@ while [ ! -z "${1}" ] ; do
                 check_value_follow "$2" "WordPress website title"
                 shift
                 WPNUM=$FOLLOWPARAM
+                WORDPRESSPATH=$SERVER_ROOT/wordpress_$FOLLOWPARAM
                 ;;
         -[Uu] | --uninstall )       
                 ACTION=UNINSTALL
