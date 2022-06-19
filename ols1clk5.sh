@@ -590,13 +590,13 @@ function install_wordpress_core
         --skip-email \
         --allow-root
     wp site switch-language vi --allow-root
-    # wp rewrite structure '/%year%/%monthnum%/%postname%/' --allow-root
+    wp rewrite structure '/%year%/%monthnum%/%postname%/' --allow-root
     echoG "Install wordpress_$WPNUM Sll plugin"    
     wp plugin install really-simple-ssl \
         --allow-root \
         --activate \
         --quiet
-    wp rsssl activate_ssl --allow-root
+    # wp rsssl activate_ssl --allow-root
     # normal plugins:
     echoG "Install wordpress_$WPNUM normal plugins"  
     wp plugin install \
@@ -1131,22 +1131,22 @@ function config_vh_wp
             sed -i -e "s/ls_enabled/ls_enabled   1\n#/" "${WEBCF}"
 
             VHOSTCONF=$SERVER_ROOT/conf/vhosts/wordpress_$WPNUM/vhconf.conf
-            echoB "${FPACE} - Check existing port"
-            grep "address.*:${WPPORT}$\|${SSLWPPORT}$"  ${WEBCF} >/dev/null 2>&1
-            if [ ${?} = 0 ]; then
-                echoY "Detect port ${WPPORT} || ${SSLWPPORT}, will skip domain setup!"
-            else   
+            # echoB "${FPACE} - Check existing port"
+            # grep "address.*:${WPPORT}$\|${SSLWPPORT}$"  ${WEBCF} >/dev/null 2>&1
+            # if [ ${?} = 0 ]; then
+                # echoY "Detect port ${WPPORT} || ${SSLWPPORT}, will skip domain setup!"
+            # else   
                 echoB "${FPACE} - Create wordpress_$WPNUM listener"  
                 cat >> ${WEBCF} <<END
 
-listener wordpress {
+listener wordpress_$WPNUM {
 address                 *:$WPPORT
 secure                  0
 map                     wordpress_$WPNUM $SITEDOMAIN
 }
 
 
-listener wordpressssl {
+listener wordpressssl_$WPNUM {
 address                 *:$SSLWPPORT
 secure                  1
 map                     wordpress_$WPNUM $SITEDOMAIN
@@ -1155,7 +1155,7 @@ certFile                $SERVER_ROOT/conf/$CERT
 }
 
 END
-            fi
+            # fi
             echoB "${FPACE} - Insert wordpress_$WPNUM virtual host"  
             cat >> ${WEBCF} <<END
 
