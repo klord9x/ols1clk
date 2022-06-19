@@ -614,7 +614,7 @@ function install_wordpress_core
     wp plugin install 'https://drive.google.com/uc?id=1tZGJXGkG7y6tXTIo_kVVgRAa2Tl3t5EO&export=download' --allow-root --activate --quiet
     # theme
     echoG "Install wordpress_$WPNUM THEME"
-    wp theme install $WPTHEME --activate
+    wp theme install $WPTHEME --activate --allow-root
     echoG "Install wordpress_$WPNUM Cache plugin"    
     wp plugin install litespeed-cache \
         --allow-root \
