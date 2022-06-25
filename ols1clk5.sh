@@ -589,7 +589,7 @@ function install_wordpress_core
         --admin_email=$EMAIL \
         --skip-email \
         --allow-root
-    wp site switch-language vi --allow-root
+    # wp site switch-language vi --allow-root
     wp rewrite structure '/%year%/%monthnum%/%postname%/' --allow-root
     echoG "Install wordpress_$WPNUM Sll plugin"    
     wp plugin install really-simple-ssl \
